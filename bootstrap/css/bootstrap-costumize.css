@@ -1,0 +1,101 @@
+TWBSColor
+TWBSColor
+Generate your own Bootstrap navbar
+Select your colors
+
+Default background  Active background  Default color  Active color  
+Colorize dropdown  
+
+Bookmark your permalink
+
+https://work.smarchal.com/twbscolor/css/1b6cee1795d9fdffffffffff0
+Include Bootstrap assets
+
+//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js
+Copy the generated SCSS/SASS/LESS/CSS
+
+SCSS
+SASS
+LESS
+CSS
+.navbar-default {
+  background-color: #1b6cee;
+  border-color: #1795d9;
+}
+.navbar-default .navbar-brand {
+  color: #fdffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #fdffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fdffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #1795d9;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #1795d9;
+}
+.navbar-default .navbar-toggle {
+  border-color: #1795d9;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #1795d9;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fdffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #fdffff;
+}
+.navbar-default .navbar-link {
+  color: #fdffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #fdffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #1795d9;
+  }
+}
+Find TWBSColor useful ? Share it !
+
+A work by Samuel Marchal
+Suggestions, comments, typo ?
+
+Licence MIT 
+
+Buy me a coffee ! or  Buy me a tea ! 
+
+All brand icons are trademarks of their respective owners.
+The use of these trademarks does not indicate endorsement of the trademark holder by TWBSColor, nor vice versa.
