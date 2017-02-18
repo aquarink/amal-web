@@ -24,16 +24,42 @@ adminAmal.controller('adminController', function ($scope, $http, $routeParams, $
     //];
 
     $scope.loginAdmin = function () {
-        // console.log($scope.login)
-        $http.post('http://192.168.1.191:8000/api/login', {
-            // 'token': localStorage.getItem('token')
-            'email' : $scope.email,
-            'password' : $scope.password,
-            'headers' : {'Content-Type': 'application/x-www-form-urlencoded'}
+        $http({
+            method  : "POST",
+            url     : 'http://192.168.1.191:8000/api/login',
+            data    : $.param({email: $scope.email, password : $scope.password}),
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
         }).
             success(function (data) {
-              console.log(data)
-                // $scope.datakaryawan = data;
+
+                var d = $scope.datanya = data;
+
+                console.log(d);
+
+                if (d.error === 1) {
+
+                    if (typeof(Storage) !== "undefined") {
+                        localStorage.setItem("token", d.meta.token);
+                        localStorage.setItem("level", d.meta.level);
+
+                        if(localStorage.getItem('level') == '1') {
+                            //$location.path('/master');
+                            console.log('Admin Master');
+                        } else if(localStorage.getItem('level') == '2') {
+                            //$location.path('/Admin Biasa');
+                            console.log('Admin Biasa');
+                        } else {
+                            //$location.path('/Admin Biasa');
+                            console.log('nulsss');
+                        }
+                    } else {
+                        console.log('Sorry! No Web Storage support..');
+                    }
+                } else {
+                    $scope.pesan = 'Nip atau Password Salah!';
+                    $scope.passTxt = '';
+                    document.getElementById("inputPassword3").focus();
+                }
             }).
             error(function (data, status, header, config) {
                 console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);

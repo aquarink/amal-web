@@ -7,16 +7,19 @@ adminAmal.config(['$routeProvider',
             when('/', {
                 resolve: {
                     "check": function () {
-                        if (localStorage.getItem('token') == null && localStorage.getItem('stat') == null){
+                        if (localStorage.getItem('token') == null && localStorage.getItem('level') == null){
                             console.log('token kosong dan redirect login');
                         } else {
-                            if(localStorage.getItem('stat') == '4') {
-                                //$location.path('/hrd');
-                                console.log('aaaa');
+                            if(localStorage.getItem('level') == '1') {
+                                //$location.path('/master');
+                                console.log('Admin Master');
+                            } else if(localStorage.getItem('level') == '2') {
+                                //$location.path('/Admin Biasa');
+                                console.log('Admin Biasa');
                             } else {
-                                console.log('bbbb');
+                                //$location.path('/Admin Biasa');
+                                console.log('nulsss');
                             }
-
                         }
 
                     }
