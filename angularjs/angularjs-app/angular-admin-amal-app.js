@@ -1,10 +1,10 @@
-var amal = angular.module("amalApp", ['ngRoute', 'ngResource','ui.bootstrap']);
+var adminAmal = angular.module("adminAmalApp", ['ngRoute', 'ngResource','ui.bootstrap']);
 
-amal.config(['$routeProvider',
+adminAmal.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
 
-            when('/', {
+            when('/admin', {
                 templateUrl: 'pages/landing.html',
                 title: '#BeramalMembersihkanRezeki'
             }).
@@ -12,11 +12,6 @@ amal.config(['$routeProvider',
             when('/masjid', {
                 templateUrl: 'pages/masjid.html',
                 title: 'Masjid | #BeramalMembersihkanRezeki'
-            }).
-
-            when('/musholah', {
-                templateUrl: 'pages/musholah.html',
-                title: 'Masjid | #musholah'
             }).
 
             when('/404', {
@@ -40,7 +35,7 @@ amal.config(['$routeProvider',
             });
     }]);
 
-amal.run(['$location', '$rootScope',
+adminAmal.run(['$location', '$rootScope',
     function ($location, $rootScope) {
         $rootScope.$on('$routeChangeSuccess', function (event, current) {
             if (current.hasOwnProperty('$$route')) {
@@ -49,7 +44,7 @@ amal.run(['$location', '$rootScope',
         });
     }]);
 
-amal.controller('NavClass', function ($scope, $location) {
+adminAmal.controller('NavClass', function ($scope, $location) {
     $scope.isActive = function (viewLocation) {
         return viewLocation === $location.path();
     };
