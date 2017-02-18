@@ -24,11 +24,16 @@ adminAmal.controller('adminController', function ($scope, $http, $routeParams, $
     //];
 
     $scope.loginAdmin = function () {
-        $http.post('http://' + selfUrl + '/PsProjectEmpPayRoll/system.php?p=karyawan&f=getdatakaryawan', {
-            'token': localStorage.getItem('token')
+        // console.log($scope.login)
+        $http.post('http://192.168.1.191:8000/api/login', {
+            // 'token': localStorage.getItem('token')
+            'email' : $scope.email,
+            'password' : $scope.password,
+            'headers' : {'Content-Type': 'application/x-www-form-urlencoded'}
         }).
             success(function (data) {
-                $scope.datakaryawan = data;
+              console.log(data)
+                // $scope.datakaryawan = data;
             }).
             error(function (data, status, header, config) {
                 console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);
