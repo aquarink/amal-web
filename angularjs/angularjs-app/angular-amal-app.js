@@ -13,12 +13,7 @@ amal.config(['$routeProvider',
                 templateUrl: 'pages/masjid.html',
                 title: 'Masjid | #BeramalMembersihkanRezeki'
             }).
-
-            when('/musholah', {
-                templateUrl: 'pages/musholah.html',
-                title: 'Masjid | #musholah'
-            }).
-
+            
             when('/404', {
                 templateUrl: 'pages/404.html',
                 title: 'Halaman Tidak Ditemukan Error 404 | #BeramalMembersihkanRezeki'
