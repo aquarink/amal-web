@@ -1,4 +1,4 @@
-var amal = angular.module("amalApp", ['ngRoute', 'ngResource']);
+var amal = angular.module("amalApp", ['ngRoute', 'ngResource','ui.bootstrap']);
 
 amal.config(['$routeProvider',
     function ($routeProvider) {
