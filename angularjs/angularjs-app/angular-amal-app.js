@@ -5,29 +5,20 @@ amal.config(['$routeProvider',
         $routeProvider.
 
             when('/', {
-                // resolve: {
-                //     "check": function ($location) {
-                //         if (localStorage.getItem('token') == null && localStorage.getItem('stat') == null){
-                //             console.log('token kosong dan redirect login');
-                //         } else {
-                //             if(localStorage.getItem('stat') == '4') {
-                //                 $location.path('/hrd');
-                //             } else {
-                //                 $location.path('/karyawan');
-                //             }
-
-                //         }
-
-                //     }
-                // },
                 templateUrl: 'pages/landing.html',
-                //controller: 'karyawanController',
                 title: '#BeramalMembersihkanRezeki'
             }).
 
+            when('/masjid', {
+                templateUrl: 'pages/masjid.html',
+                title: 'Masjid | #BeramalMembersihkanRezeki'
+            }).
+
+
+
             when('/404', {
-                templateUrl: 'View/404.html',
-                title: 'Halaman Tidak Ditemukan Error 404'
+                templateUrl: 'pages/404.html',
+                title: 'Halaman Tidak Ditemukan Error 404 | #BeramalMembersihkanRezeki'
             }).
 
             when('/out', {
@@ -40,7 +31,9 @@ amal.config(['$routeProvider',
             }).
 
             otherwise({
-                redirectTo: '/'
+                //redirectTo: '/'
+                templateUrl: 'pages/404.html',
+                title: 'Halaman Tidak Ditemukan Error 404 | #BeramalMembersihkanRezeki'
             });
     }]);
 

@@ -1,0 +1,62 @@
+<div class="container">
+
+    <div class="col-md-8">
+        <h1>Halaman Tidak Ditemukan</h1>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">Zakat Kalkulator</div>
+            <div class="panel-body">
+                <form class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">Rp.</div>
+                        <input ng-model="pendapatan" type="text" class="form-control" id="pendapatan" placeholder="Pendapatan Sebulan">
+                        <div class="input-group-addon">/bulan</div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer" style="font-weight: bold;">Zakat Dikeluarkan Rp.{{(pendapatan*2.5)/100 | number}}/bulan</div>
+        </div>
+        <br>
+        <div class="panel panel-info">
+            <div class="panel-heading">Berzakat / Donasi</div>
+            <div class="panel-body">
+                <form class="form-group">
+
+                    <label>Nama</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
+                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Nama Pezakat / Pendonasi">
+                    </div>
+                    <br>
+                    <label>Nama Bank</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-inbox"></i></div>
+                        <select class="form-control">
+                            <option>Pilih Bank</option>
+                            <option>BCA</option>
+                        </select>
+                    </div>
+                    <br>
+                    <label>No.Rekening</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></div>
+                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Nomor Rekening Bank">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <input type="submit" class="btn btn-success" value="Proses!">
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer" style="text-align: justify;">
+                Donasi yang anda berikan kepada kami, akan kami salurkan kembali kepada 
+                pengurus masjid / musholah / yayasan yang membutuhkan secara prioritas. 
+                Kami memiliki data-datanya dan kami telah membuat prioritas kebutuhan 
+                terhadap penerima itu sendiri. <a href="">Lebih lanjut..</a>
+            </div>
+        </div>
+    </div>
+
+</div>
