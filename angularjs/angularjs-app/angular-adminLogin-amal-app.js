@@ -5,8 +5,25 @@ adminAmal.config(['$routeProvider',
         $routeProvider.
 
             when('/', {
-              templateUrl: 'pages-admin/login.html',
-              title: 'Login'
+                resolve: {
+                    "check": function () {
+                        if (localStorage.getItem('token') == null && localStorage.getItem('stat') == null){
+                            console.log('token kosong dan redirect login');
+                        } else {
+                            if(localStorage.getItem('stat') == '4') {
+                                //$location.path('/hrd');
+                                console.log('aaaa');
+                            } else {
+                                console.log('bbbb');
+                            }
+
+                        }
+
+                    }
+                },
+                templateUrl: 'pages-admin/login.html',
+                controller: 'adminController',
+                title: 'Admin Login'
             }).
 
             when('/404', {
