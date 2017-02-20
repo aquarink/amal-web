@@ -1,0 +1,18 @@
+.containerCMS{
+  width: 100%;
+  background-color: #fff;
+}
+
+@font-face {
+  font-family: 'Timeless';
+  src: url('../fonts/Timeless.ttf');
+  /*src: url();*/
+}
+.titleCMS{
+  font-size: 22px;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  font-weight: 400;
+  font-family: 'Timeless';
+}

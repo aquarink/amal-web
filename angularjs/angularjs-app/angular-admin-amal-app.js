@@ -9,9 +9,9 @@ adminAmal.config(['$routeProvider',
                 title: '#BeramalMembersihkanRezeki'
             }).
 
-            when('/masjid', {
-                templateUrl: 'pages/masjid.html',
-                title: 'Masjid | #BeramalMembersihkanRezeki'
+            when('/register', {
+                templateUrl: 'pages-admin/register.html',
+                title: 'Register User'
             }).
 
             when('/404', {

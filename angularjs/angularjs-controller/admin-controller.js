@@ -1,6 +1,6 @@
 'use strict';
 
-adminAmal.controller('adminController', function ($scope, $http, $routeParams, $location) {
+adminLogin.controller('adminController', function ($scope, $http, $routeParams, $location) {
 
     //$scope.tanggal = [
     //    {val:'1'}, {val:'2'}, {val:'3'}, {val:'4'}, {val:'5'}, {val:'6'}, {val:'7'}, {val:'8'}, {val:'9'}, {val:'10'},

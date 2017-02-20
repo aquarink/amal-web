@@ -1,6 +1,6 @@
-var adminLogin = angular.module("adminLoginApp", ['ngRoute', 'ngResource','ui.bootstrap']);
+var adminRegister = angular.module("adminRegisterApp", ['ngRoute', 'ngResource','ui.bootstrap']);
 
-adminLogin.config(['$routeProvider',
+adminRegister.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
 
@@ -24,9 +24,9 @@ adminLogin.config(['$routeProvider',
 
                     }
                 },
-                templateUrl: 'pages-admin/login.html',
-                controller: 'adminController',
-                title: 'Admin Login'
+                templateUrl: 'pages-admin/register.html',
+                // controller: 'adminController',
+                title: 'Admin Register'
             }).
 
             when('/404', {
@@ -50,7 +50,7 @@ adminLogin.config(['$routeProvider',
             });
     }]);
 
-adminLogin.run(['$location', '$rootScope',
+adminRegister.run(['$location', '$rootScope',
     function ($location, $rootScope) {
         $rootScope.$on('$routeChangeSuccess', function (event, current) {
             if (current.hasOwnProperty('$$route')) {
@@ -59,7 +59,7 @@ adminLogin.run(['$location', '$rootScope',
         });
     }]);
 
-adminLogin.controller('NavClass', function ($scope, $location) {
+adminRegister.controller('NavClass', function ($scope, $location) {
     $scope.isActive = function (viewLocation) {
         return viewLocation === $location.path();
     };
