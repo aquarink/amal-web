@@ -15,9 +15,11 @@
 
     <!-- Angularjs App-->
     <script src="angularjs/angularjs-app/angular-amal-app.js"></script>
+    <script src="angularjs/angularjs-app/angular-admin-amal-app.js"></script>
 
     <!-- Angularjs Controller-->
     <!-- <script src="angularjs/angularjs-controller/"></script> -->
+    <script src="angularjs/angularjs-controller/admin-controller.js"></script>
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +30,7 @@
 </head>
 <body style="background-color: #d4d4d4">
 
-    <nav class="navbar navbar-default navbar-fixed-top" style="font-weight: bold;">
+    <nav ng-hide="currentPath === '/admin-login'" class="navbar navbar-default navbar-fixed-top" style="font-weight: bold;" ng-controller="NavClass">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
