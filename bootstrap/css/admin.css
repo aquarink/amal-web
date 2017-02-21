@@ -1,6 +1,7 @@
 .containerCMS{
   width: 100%;
   background-color: #fff;
+  box-shadow: 0px 5px 13px 0px rgba(0,0,0,0.22);
 }
 
 @font-face {
@@ -9,7 +10,7 @@
   /*src: url();*/
 }
 .titleCMS{
-  font-size: 22px;
+  font-size: 30px;
   text-align: center;
   padding: 15px;
   width: 100%;

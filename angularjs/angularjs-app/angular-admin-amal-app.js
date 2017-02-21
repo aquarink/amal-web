@@ -14,6 +14,11 @@ adminAmal.config(['$routeProvider',
                 title: 'Register User'
             }).
 
+            when('/datauser', {
+                templateUrl: 'pages-admin/dataUser.html',
+                title: 'Data User'
+            }).
+
             when('/404', {
                 templateUrl: 'pages/404.html',
                 title: 'Halaman Tidak Ditemukan Error 404 | #BeramalMembersihkanRezeki'
