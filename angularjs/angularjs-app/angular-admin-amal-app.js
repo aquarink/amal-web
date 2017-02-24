@@ -24,7 +24,7 @@ amal.config(['$routeProvider',
                 },
                 templateUrl: 'pages-admin/login.html',
                 controller: 'adminController',
-                title: 'Admin Login'
+                title: 'Admin Login Numpang Commit'
             }).
 
         when('/admin-register', {
