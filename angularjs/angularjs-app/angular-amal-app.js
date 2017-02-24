@@ -48,4 +48,6 @@ amal.controller('NavClass', function ($scope, $location) {
     $scope.isActive = function (viewLocation) {
         return viewLocation === $location.path();
     };
+
+    $scope.currentPath = $location.path();
 });

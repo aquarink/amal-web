@@ -1,56 +1,34 @@
-var adminAmal = angular.module("adminAmalApp", ['ngRoute', 'ngResource','ui.bootstrap']);
-
-adminAmal.config(['$routeProvider',
+amal.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
 
-            when('/admin', {
-                templateUrl: 'pages/landing.html',
-                title: '#BeramalMembersihkanRezeki'
-            }).
+        when('/admin-login', {
+            resolve: {
+                "check": function () {
+                    if (localStorage.getItem('token') == null && localStorage.getItem('level') == null){
+                        console.log('token kosong dan redirect login');
+                    } else {
+                        if(localStorage.getItem('level') == '1') {
+                                //$location.path('/master');
+                                console.log('Admin Master');
+                            } else if(localStorage.getItem('level') == '2') {
+                                //$location.path('/Admin Biasa');
+                                console.log('Admin Biasa');
+                            } else {
+                                //$location.path('/Admin Biasa');
+                                console.log('nulsss');
+                            }
+                        }
 
-            when('/register', {
-                templateUrl: 'pages-admin/register.html',
-                title: 'Register User'
-            }).
-
-            when('/datauser', {
-                templateUrl: 'pages-admin/dataUser.html',
-                title: 'Data User'
-            }).
-
-            when('/404', {
-                templateUrl: 'pages/404.html',
-                title: 'Halaman Tidak Ditemukan Error 404 | #BeramalMembersihkanRezeki'
-            }).
-
-            when('/out', {
-                resolve: {
-                    "check": function () {
-                        localStorage.clear();
                     }
                 },
-                redirectTo: '/'
+                templateUrl: 'pages-admin/login.html',
+                controller: 'adminController',
+                title: 'Admin Login'
             }).
 
-            otherwise({
-                //redirectTo: '/'
-                templateUrl: 'pages/404.html',
-                title: 'Halaman Tidak Ditemukan Error 404 | #BeramalMembersihkanRezeki'
-            });
+        when('/admin-register', {
+            templateUrl: 'pages-admin/register.html',
+            title: 'Register User'
+        })
     }]);
-
-adminAmal.run(['$location', '$rootScope',
-    function ($location, $rootScope) {
-        $rootScope.$on('$routeChangeSuccess', function (event, current) {
-            if (current.hasOwnProperty('$$route')) {
-                $rootScope.title = current.$$route.title;
-            }
-        });
-    }]);
-
-adminAmal.controller('NavClass', function ($scope, $location) {
-    $scope.isActive = function (viewLocation) {
-        return viewLocation === $location.path();
-    };
-});
