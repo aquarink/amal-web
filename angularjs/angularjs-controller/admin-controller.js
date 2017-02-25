@@ -104,7 +104,7 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
         var url = $location.url();
         var urlSplit = url.split("?");
         var paramSplit = urlSplit[1].split('&');
-        console.log(paramSplit);
+        //console.log(paramSplit);
 
         $http({
             method  : "POST",
@@ -113,14 +113,12 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
             headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
         }).
             success(function (data) {
-
-                var d = $scope.datanya = data;
                 console.log(data);
 
-                if (d.error === 1) {
+                if (data.error == '1') {
                     $location.path('/admin-login');
                 } else {
-                    $scope.pesan = 'Verifikasi akun gagal.';
+                    $scope.pesan = '<strong>Verifiasi Gagal!</strong> Harap ulangi langkah yang ada pada email anda.';
                 }
             }).
             error(function (data, status, header, config) {
