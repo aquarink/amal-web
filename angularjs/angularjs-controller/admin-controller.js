@@ -58,7 +58,7 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
                 } else {
                     $scope.pesan = 'Nip atau Password Salah!';
                     $scope.passTxt = '';
-                    document.getElementById("inputPassword3").focus();
+                    document.getElementById("inputPassword").focus();
                 }
             }).
             error(function (data, status, header, config) {

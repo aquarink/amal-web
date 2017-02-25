@@ -31,8 +31,4 @@ amal.config(['$routeProvider',
             templateUrl: 'pages-admin/register.html',
             title: 'Register User'
         })
-<<<<<<< HEAD
     }]);
-=======
-    }]);
->>>>>>> 218434bf3f612e4e254bdfcbe72767d686b2b8e8
