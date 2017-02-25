@@ -52,5 +52,10 @@ amal.config(['$routeProvider',
             redirectTo: '/admin-register',
             controller: 'adminController',
             title: 'Register User'
+        }).
+
+        when('/verify', {
+            templateUrl: 'pages-admin/verify.html',
+            title: 'Verifikasi Akun | #BeramalMembersihkanRezeki'
         })
     }]);

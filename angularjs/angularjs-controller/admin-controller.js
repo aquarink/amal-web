@@ -98,4 +98,35 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
                 console.log(level);
             })
     }
+
+    $scope.verify = function () {
+
+        var url = $location.url();
+        var urlSplit = url.split("?");
+        var paramSplit = urlSplit[1].split('&');
+        //console.log(paramSplit);
+
+        $http({
+            method  : "POST",
+            url     : itv +'api/verifikasi-email',
+            data    : $.param({email: paramSplit[0], token: paramSplit[1]}),
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
+        }).
+            success(function (data) {
+
+                var d = $scope.datanya = data;
+
+                if (d.error === 1) {
+                    $location.path('/admin-login');
+                } else {
+                    $scope.pesan = 'Verifikasi akun gagal.';
+                }
+            }).
+            error(function (data, status, header, config) {
+                console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);
+                //$location.path('/admin');
+                //$scope.apply();
+                console.log(level);
+            })
+    }
 });

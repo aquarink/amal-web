@@ -36,7 +36,7 @@ amal.config(['$routeProvider',
     }]);
 
 amal.run(['$location', '$rootScope',
-    function ($location, $rootScope, $route) {
+    function ($location, $rootScope) {
 
         $rootScope.$on('$routeChangeSuccess', function (event, current) {
             if (current.hasOwnProperty('$$route')) {
