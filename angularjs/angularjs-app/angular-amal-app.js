@@ -36,13 +36,22 @@ amal.config(['$routeProvider',
     }]);
 
 amal.run(['$location', '$rootScope',
-    function ($location, $rootScope) {
+    function ($location, $rootScope, $route) {
+
         $rootScope.$on('$routeChangeSuccess', function (event, current) {
             if (current.hasOwnProperty('$$route')) {
                 $rootScope.title = current.$$route.title;
             }
         });
-    }]);
+
+        $rootScope.redirUrl = function (url) {
+            var urlRed = "/" + url;
+            $location.path(urlRed);
+            location.reload();
+            $location.path(urlRed);
+        };
+    }
+]);
 
 amal.controller('NavClass', function ($scope, $location) {
     $scope.isActive = function (viewLocation) {

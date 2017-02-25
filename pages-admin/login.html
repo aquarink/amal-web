@@ -98,7 +98,7 @@ font-family: inherit;
 font-size: 0.95em;
 }
 
-.input {
+.inputSub {
 box-sizing: border-box;
 display: block;
 width: 100%;
@@ -108,12 +108,8 @@ padding: 16px;
 outline: 0;
 font-family: inherit;
 font-size: 0.95em;
-background: #fff;
-border-color: #bbb;
-color: #555;
-background: #28d;
-border-color: transparent;
 color: #fff;
+background: #28d;
 cursor: pointer;
 }
 
@@ -156,7 +152,11 @@ border-color: #05a;
   <form class="login-container" ng-controller="adminController" name="loginFrm">
     <p><input required type="email" id="inputEmail" placeholder="Email" ng-model="email"></p>
     <p><input required type="password" id="inputPassword" placeholder="Password" ng-model="password"></p>
-    <p><button class="input" ng-disabled="loginFrm.$invalid" ng-click="loginAdmin()"><i class="glyphicon glyphicon-log-in"></i> Login</button></p>
-    <p style="text-align:center"><a href="#/admin-register"><i class="glyphicon glyphicon-edit"></i> Register</a></p>
+    <p><button class="inputSub" ng-disabled="loginFrm.$invalid" ng-click="loginAdmin()"><i class="glyphicon glyphicon-log-in"></i> Login</button></p>
+    <p style="text-align:center">
+      <a ng-click="redirUrl('')"><i class="glyphicon glyphicon-arrow-left"></i> Index</a>
+      |
+      <a href="#/admin-register"><i class="glyphicon glyphicon-edit"></i> Register</a>
+    </p>
   </form>
 </div>

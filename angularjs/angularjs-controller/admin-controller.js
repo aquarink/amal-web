@@ -67,4 +67,35 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
                 $scope.apply();
             })
     }
+
+    $scope.register = function (level) {
+        $scope.loading = true;
+        $http({
+            method  : "POST",
+            url     : itv +'api/register',
+            data    : $.param({level: level, name: $scope.nama, email : $scope.email, password: $scope.password, no_telepon : $scope.telepon}),
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
+        }).
+            success(function (data) {
+                $scope.loading = false;
+
+                var d = $scope.datanya = data;
+
+                console.log(level);
+
+                if (d.error === 1) {
+
+                    console.log('ok')
+                } else {
+                    $scope.pesan = data.result;
+                    console.log(data.result);
+                }
+            }).
+            error(function (data, status, header, config) {
+                console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);
+                //$location.path('/admin');
+                //$scope.apply();
+                console.log(level);
+            })
+    }
 });

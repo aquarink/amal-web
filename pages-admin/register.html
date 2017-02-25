@@ -126,37 +126,68 @@ padding: 12px;
 padding: 12px;
 }
 
-.login input {
-box-sizing: border-box;
-display: block;
-width: 100%;
-border-width: 1px;
-border-style: solid;
-padding: 16px;
-outline: 0;
-font-family: inherit;
-font-size: 0.95em;
+/*.login input {*/
+/*box-sizing: border-box;*/
+/*display: block;*/
+/*width: 100%;*/
+/*border-width: 1px;*/
+/*border-style: solid;*/
+/*padding: 16px;*/
+/*outline: 0;*/
+/*font-family: inherit;*/
+/*font-size: 0.95em;*/
+/*}*/
+
+/*.login input[type="email"],*/
+/*.login input[type="password"] {*/
+/*background: #fff;*/
+/*border-color: #bbb;*/
+/*color: #555;*/
+/*}*/
+
+.input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+  cursor: pointer;
 }
 
-.login input[type="email"],
-.login input[type="password"] {
-background: #fff;
-border-color: #bbb;
-color: #555;
+.inputSub {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+  color: #fff;
+  background: #28d;
+  cursor: pointer;
 }
 
-/* Text fields' focus effect */
-.login input[type="email"]:focus,
-.login input[type="password"]:focus {
-border-color: #888;
-}
+/*/!* Text fields' focus effect *!/*/
+/*.login input[type="email"]:focus,*/
+/*.login input[type="password"]:focus {*/
+/*border-color: #888;*/
+/*}*/
 
-.login input[type="submit"] {
-background: #28d;
-border-color: transparent;
-color: #fff;
-cursor: pointer;
-}
+/*.login input[type="submit"] {*/
+/*background: #28d;*/
+/*border-color: transparent;*/
+/*color: #fff;*/
+/*cursor: pointer;*/
+/*}*/
 
 .login input[type="submit"]:hover {
 background: #17c;
@@ -166,6 +197,25 @@ background: #17c;
 .login input[type="submit"]:focus {
 border-color: #05a;
 }
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -174,12 +224,39 @@ border-color: #05a;
 
   <h2 class="login-header">Registrasi</h2>
 
-  <form class="login-container">
-    <p><input type="text" placeholder="Nama Anda" required=""></p>
-    <p><input type="text" placeholder="No. Telpon" required=""></p>
-    <p><input type="text" placeholder="Email Aktif" required=""></p>
-    <!-- <p><input type="text" id="kelahiran" placeholder="Tanggal Lahir"></p> -->
-    <p><input type="submit" value="Register"></p>
-    <p style="text-align:center"><a href="#/admin-login"><i class="glyphicon glyphicon-log-in"></i> Login</a></p>
+  <form class="login-container" ng-controller="adminController" name="registFrm">
+    <p>
+      <input class="input" required type="text" id="inputNama" placeholder="Nama" ng-model="nama">
+    </p>
+    <p>
+      <input class="input" required type="email" id="inputEmail" placeholder="Email" ng-model="email">
+      <span ng-show="registFrm.email.$error.required">Email is required.</span>
+      <span ng-show="registFrm.email.$error.email">Invalid email address.</span>
+      <span style="padding: 5px; color: red">{{pesan.email.0}}</span>
+    </p>
+    <p>
+      <input class="input" required type="tel" id="inputTelpon" placeholder="No.Telepon" ng-model="telepon">
+      <span ng-show="registFrm.telepon.$error.required">Email is required.</span>
+      <span ng-show="registFrm.telepon.$error.tel">Invalid email address.</span>
+      <span style="padding: 5px; color: red">{{pesan.no_telepon.0}}</span>
+    </p>
+    <p>
+      <input class="input" required type="password" id="inputPassword" placeholder="Password" ng-model="password">
+      <span ng-show="registFrm.password.$error.required">Email is required.</span>
+      <span ng-show="registFrm.password.$error.password">Invalid email address.</span>
+      <span style="padding: 5px; color: red">{{pesan.password.0}}</span>
+    </p>
+    <p><button class="inputSub" ng-disabled="registFrm.$invalid" ng-click="register(2)"><i class="glyphicon glyphicon-log-in"></i> Registrasi</button></p>
+    <p style="text-align:center">
+      <a ng-click="redirUrl('')"><i class="glyphicon glyphicon-arrow-left"></i> Index</a>
+      |
+      <a href="#/admin-login"><i class="glyphicon glyphicon-log-in"></i> Login</a>
+    </p>
   </form>
+</div>
+
+<div ng-if="loading" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog" role="document" style="text-align: center">
+    <img src="http://localhost/amal-web/images/hourglass.gif" alt="">
+  </div>
 </div>
