@@ -1,3 +1,5 @@
-<div ng-if="pesan != null" class="alert alert-danger" style="text-align: center">
-    <strong>Verifiasi Gagal!</strong> Harap ulangi langkah yang ada pada email anda.
+<div ng-controller="adminController" ng-init="verify()">
+    <div ng-if="pesan != null" class="alert alert-danger" style="text-align: center">
+        <strong>Verifiasi Gagal!</strong> Harap ulangi langkah yang ada pada email anda.
+    </div>
 </div>

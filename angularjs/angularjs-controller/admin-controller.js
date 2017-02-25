@@ -104,7 +104,7 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
         var url = $location.url();
         var urlSplit = url.split("?");
         var paramSplit = urlSplit[1].split('&');
-        //console.log(paramSplit);
+        console.log(paramSplit);
 
         $http({
             method  : "POST",
