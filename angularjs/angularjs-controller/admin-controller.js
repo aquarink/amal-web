@@ -115,6 +115,7 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
             success(function (data) {
 
                 var d = $scope.datanya = data;
+                console.log(data);
 
                 if (d.error === 1) {
                     $location.path('/admin-login');
