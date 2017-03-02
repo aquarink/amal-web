@@ -1,4 +1,4 @@
-var amal = angular.module("amalApp", ['ngRoute', 'ngResource','ui.bootstrap']);
+var amal = angular.module("amalApp", ['ngRoute', 'ngResource','ngSanitize']);
 
 amal.config(['$routeProvider',
     function ($routeProvider) {
@@ -37,12 +37,21 @@ amal.config(['$routeProvider',
 
 amal.run(['$location', '$rootScope',
     function ($location, $rootScope) {
+
         $rootScope.$on('$routeChangeSuccess', function (event, current) {
             if (current.hasOwnProperty('$$route')) {
                 $rootScope.title = current.$$route.title;
             }
         });
-    }]);
+
+        $rootScope.redirUrl = function (url) {
+            var urlRed = "/" + url;
+            $location.path(urlRed);
+            location.reload();
+            $location.path(urlRed);
+        };
+    }
+]);
 
 amal.controller('NavClass', function ($scope, $location) {
     $scope.isActive = function (viewLocation) {
