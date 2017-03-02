@@ -30,5 +30,15 @@ amal.config(['$routeProvider',
         when('/admin-register', {
             templateUrl: 'pages-admin/register.html',
             title: 'Register User'
+        }).
+
+        when('/admin-user', {
+            templateUrl: 'pages-admin/dataUser.html',
+            title: 'User'
+        }).
+
+        when('/admin-tambahArtikel', {
+            templateUrl: 'pages-admin/addArticle.html',
+            title: 'Tambah Artikel'
         })
     }]);
