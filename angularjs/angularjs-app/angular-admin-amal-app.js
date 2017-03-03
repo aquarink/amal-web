@@ -64,9 +64,9 @@ amal.config(['$routeProvider',
             title: 'Tambah Artikel'
         }).
 
-        when('/admin-profile', {
-            templateUrl: 'pages-admin/profile.html',
-            title: 'Profile'
+        when('/admin-pengaturan', {
+            templateUrl: 'pages-admin/setting.html',
+            title: 'Pengaturan'
         }).
 
         when('/verify', {

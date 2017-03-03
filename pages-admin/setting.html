@@ -1,0 +1,143 @@
+<style rel="stylesheet" type="text/css">
+  .test{
+    padding: 20px;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a data-target="#profile" aria-controls="home" role="tab" data-toggle="tab">Profile</a></li>
+          <li role="presentation"><a data-target="#rekening" aria-controls="profile" role="tab" data-toggle="tab">Rekening</a></li>
+          <li role="presentation"><a data-target="#security" aria-controls="security" role="tab" data-toggle="tab">Security</a></li>
+          <!-- <li role="presentation"><a data-target="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li> -->
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="profile">
+            <div class="test">
+              <form class="form-horizontal" action="index.html" method="post">
+                <div class="form-group">
+                  <div class="col-md-8 col-md-offset-4">
+                    <img src="http://placehold.it/300x300" id="showimages" style="margin-bottom:5px; max-height:100px;" />
+
+                    <input id="image_change" type="file" class="" name="image_profile">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="nama_profile" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Nama</label>
+
+                  <div class="col-md-6">
+                    <input id="nama_profile" type="text" class="form-control" name="nama_profile" value="" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="ktp_profile" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">No. KTP</label>
+
+                  <div class="col-md-6">
+                    <input id="ktp_profile" type="text" class="form-control" name="ktp_profile" value="" required>
+                  </div>
+                </div>
+
+                <div class="col-md-8 col-md-offset-4">
+                  <button type="submit" class="btn btn-primary">
+                    Simpan
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="rekening">
+            <div class="test">
+              <form class="form-horizontal" action="index.html" method="post">
+                <div class="form-group">
+                  <label for="namaBank_profile" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Nama Bank</label>
+
+                  <div class="col-md-6">
+                    <select class="form-control" id="namaBank_profile" name="namaBank_profile">
+                      <option>-- Pilih --</option>
+                      <option>BCA</option>
+                      <option>BNI</option>
+                      <option>BJB</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="rekening_profile" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">No. Rekening</label>
+
+                  <div class="col-md-6">
+                    <input id="rekening_profile" type="text" class="form-control" name="rekening_profile" value="" required>
+                  </div>
+                </div>
+
+                <div class="col-md-8 col-md-offset-4">
+                  <button type="submit" class="btn btn-primary">
+                    Simpan
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="security">
+            <div class="test">
+              <form class="form-horizontal" action="index.html" method="post">
+                <div class="form-group">
+                  <label for="namaBank_profile" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Password Lama</label>
+
+                  <div class="col-md-6">
+                    <input id="rekening_profile" type="password" class="form-control" name="rekening_profile" value="" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="namaBank_profile" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Password Baru</label>
+
+                  <div class="col-md-6">
+                    <input id="rekening_profile" type="password" class="form-control" name="rekening_profile" value="" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="namaBank_profile" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Konfirmasi Password Baru</label>
+
+                  <div class="col-md-6">
+                    <input id="rekening_profile" type="password" class="form-control" name="rekening_profile" value="" required>
+                  </div>
+                </div>
+
+                <div class="col-md-8 col-md-offset-4">
+                  <button type="submit" class="btn btn-primary">
+                    Simpan
+                  </button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+          <!-- <div role="tabpanel" class="tab-pane" id="settings">...</div> -->
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  $('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+  })
+</script>
