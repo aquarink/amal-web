@@ -31,14 +31,13 @@
       <!-- <link href="" rel="stylesheet"> -->
   </head>
 
+
   <body>
-<<<<<<< HEAD
+
+      <!-- nav untuk page depan -->
       <nav ng-hide="currentPath === '/admin-login' || currentPath === '/admin-register' || currentPath === '/admin-tambahArtikel'"
       class="navbar navbar-default navbar-fixed-top" style="font-weight: bold;" ng-controller="NavClass">
 
-=======
-      <nav ng-hide="currentPath === '/admin-login' || currentPath === '/admin-register'" class="navbar navbar-default navbar-fixed-top" style="font-weight: bold;" ng-controller="NavClass">
->>>>>>> cc86cb8648c354db09bc10782cc5c3887a44a3fb
           <div class="container">
               <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -75,6 +74,7 @@
           </div>
       </nav>
 
+      <!-- nav admin untuk user biasa -->
       <nav ng-hide="currentPath === '/admin-login' || currentPath === '/admin-register' || currentPath === '/masjid'"
       class="navbar navbar-default navbar-fixed-top" style="font-weight: bold;">
           <div class="container">
@@ -93,24 +93,9 @@
                   <ul class="nav navbar-nav">
                       <li ng-class="{active:isActive('/')}"><a href="#"><i class="glyphicon glyphicon-home"></i> Beranda</a></li>
                       <li class="dropdown">
-                          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+                          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artikel <span class="caret"></span></a>
                           <ul class="dropdown-menu">
-                              <li g-class="{active:isActive('/register')}"><a href="#">Tambah User</a></li>
-                              <li><a href="#">Data User</a></li>
-                          </ul>
-                      </li>
-                      <li class="dropdown">
-                          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Masjid <span class="caret"></span></a>
-                          <ul class="dropdown-menu">
-                              <li g-class="{active:isActive('/register')}"><a href="#">Tambah Masjid</a></li>
-                              <li><a href="#">Data Masjid</a></li>
-                          </ul>
-                      </li>
-                      <li class="dropdown">
-                          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mushola <span class="caret"></span></a>
-                          <ul class="dropdown-menu">
-                              <li g-class="{active:isActive('/register')}"><a href="#">Tambah Mushola</a></li>
-                              <li><a href="#">Data Mushola</a></li>
+                              <li g-class="{active:isActive('/admin-tambahArtikel')}"><a href="#/admin-tambahArtikel">Tambah Artikel</a></li>
                           </ul>
                       </li>
                       <li class="dropdown">
@@ -130,7 +115,7 @@
                       <li class="dropdown">
                           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
                           <ul class="dropdown-menu">
-                              <li><a href="#">Akun</a></li>
+                              <li g-class="{active:isActive('#/admin-profile')}"><a href="#/admin-profile">Profile</a></li>
                               <!-- <li><a href="#">Data User</a></li>
                               <li><a href="#">Something else here</a></li> -->
                               <li role="separator" class="divider"></li>

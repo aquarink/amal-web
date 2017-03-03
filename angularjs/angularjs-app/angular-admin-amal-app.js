@@ -63,7 +63,12 @@ amal.config(['$routeProvider',
             templateUrl: 'pages-admin/addArticle.html',
             title: 'Tambah Artikel'
         }).
-        
+
+        when('/admin-profile', {
+            templateUrl: 'pages-admin/profile.html',
+            title: 'Profile'
+        }).
+
         when('/verify', {
             templateUrl: 'pages-admin/verify.html',
             title: 'Verifikasi Akun | #BeramalMembersihkanRezeki'
