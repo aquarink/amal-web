@@ -1,21 +1,23 @@
 var amal = angular.module("amalApp", ['ngRoute', 'ngResource','ngSanitize']);
 
-amal.config(['$routeProvider',
-    function ($routeProvider) {
+amal.config(['$routeProvider','$locationProvider',
+    function ($routeProvider,$locationProvider) {
+        $locationProvider.hashPrefix('!').html5Mode(true);
         $routeProvider.
 
             when('/', {
-                templateUrl: 'pages/landing.html',
+                templateUrl: '/amal-web/pages/landing.html',
                 title: '#BeramalMembersihkanRezeki'
             }).
 
             when('/masjid', {
-                templateUrl: 'pages/masjid.html',
-                title: 'Masjid | #BeramalMembersihkanRezeki'
+                template: '<h1>asas</h1>'
+                //templateUrl: '/amal-web/pages/masjid.html',
+                //title: 'Masjid | #BeramalMembersihkanRezeki'
             }).
 
             when('/404', {
-                templateUrl: 'pages/404.html',
+                templateUrl: '/amal-web/pages/404.html',
                 title: 'Halaman Tidak Ditemukan Error 404 | #BeramalMembersihkanRezeki'
             }).
 
@@ -30,7 +32,7 @@ amal.config(['$routeProvider',
 
             otherwise({
                 //redirectTo: '/'
-                templateUrl: 'pages/404.html',
+                templateUrl: '/amal-web/pages/404.html',
                 title: 'Halaman Tidak Ditemukan Error 404 | #BeramalMembersihkanRezeki'
             });
     }]);
@@ -50,6 +52,8 @@ amal.run(['$location', '$rootScope',
             location.reload();
             $location.path(urlRed);
         };
+
+        $rootScope.currentPath = $location.path();
     }
 ]);
 
@@ -57,6 +61,4 @@ amal.controller('NavClass', function ($scope, $location) {
     $scope.isActive = function (viewLocation) {
         return viewLocation === $location.path();
     };
-
-    $scope.currentPath = $location.path();
 });

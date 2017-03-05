@@ -1,5 +1,6 @@
-amal.config(['$routeProvider',
-    function ($routeProvider) {
+amal.config(['$routeProvider','$locationProvider',
+    function ($routeProvider,$locationProvider) {
+        $locationProvider.hashPrefix('!').html5Mode(true);
         $routeProvider.
 
         when('/admin-login', {
