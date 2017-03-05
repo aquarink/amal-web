@@ -26,7 +26,7 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
     $scope.loginAdmin = function () {
         $http({
             method  : "POST",
-            url     : itv +'api/login',
+            url     : itv +'login',
             data    : $.param({email: $scope.email, password : $scope.password}),
             headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
         }).
@@ -72,7 +72,7 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
         $scope.loading = true;
         $http({
             method  : "POST",
-            url     : itv +'api/register',
+            url     : itv +'register',
             data    : $.param({level: level, name: $scope.nama, email : $scope.email, password: $scope.password, no_telepon : $scope.telepon}),
             headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
         }).
@@ -108,7 +108,7 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
 
         $http({
             method  : "POST",
-            url     : itv +'api/verifikasi-email',
+            url     : itv +'verifikasi-email',
             data    : $.param({email: paramSplit[0], token: paramSplit[1]}),
             headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
         }).

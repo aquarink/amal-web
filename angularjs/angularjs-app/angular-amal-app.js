@@ -11,9 +11,8 @@ amal.config(['$routeProvider','$locationProvider',
             }).
 
             when('/masjid', {
-                template: '<h1>asas</h1>'
-                //templateUrl: '/amal-web/pages/masjid.html',
-                //title: 'Masjid | #BeramalMembersihkanRezeki'
+                templateUrl: '/amal-web/pages/masjid.html',
+                title: 'Masjid | #BeramalMembersihkanRezeki'
             }).
 
             when('/404', {
