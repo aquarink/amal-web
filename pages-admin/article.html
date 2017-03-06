@@ -1,0 +1,255 @@
+<!-- <div class="containerCMS">
+  <div class="container" style="padding: 10px 0 35px 0;">
+    <div class="col-xs-12">
+
+      <div class="titleCMS">
+        Tambah Artikel
+      </div>
+      <hr>
+
+      <div class="col-xs-12">
+        <form class="form-horizontal" action="" method="post">
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+<style rel="stylesheet" type="text/css">
+  h2{
+    text-align: center;
+    font-family: 'Timeless';
+    color: #000;
+    text-transform: uppercase;
+    padding: 20px;
+  }
+  label{
+    font-family: 'Timeless';
+    font-size: 16px;
+  }
+  td{
+    font-family: 'Timeless';
+    font-size: 15px;
+    font-weight: bold;
+  }
+  th{
+    font-family: 'Timeless';
+    font-size: 16px;
+    font-weight: bold;
+  }
+  hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a data-target="#newArticle" aria-controls="newArticle" role="tab" data-toggle="tab">Tambah Artikel</a></li>
+        <li role="presentation"><a data-target="#dataArticle" aria-controls="dataArticle" role="tab" data-toggle="tab">Data Artikel</a></li>
+        <!-- <li role="presentation"><a data-target="#security" aria-controls="security" role="tab" data-toggle="tab">Security</a></li> -->
+        <!-- <li role="presentation"><a data-target="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li> -->
+      </ul>
+
+      <!-- awal div tab content -->
+      <div class="tab-content">
+
+        <!-- awal tambah artikel -->
+        <div role="tabpanel" class="tab-pane active" id="newArticle">
+          <div class="panel panel-default" style="padding:30px 20px 20px 20px;border-top:0;">
+            <div class="panel-body">
+              <h2>Tambah Artikel</h2> <hr>
+              <form class="form-horizontal" role="form" method="POST" action="" enctype="multipart/form-data">
+                <div class="col-md-7">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="title_article" class="col-xs-2 control-label" style="text-align:center">Judul</label>
+                      <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
+
+                      <div class="col-md-9">
+                        <input id="title_article" type="text" class="form-control" name="title_article" value="" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="jenis_article" class="col-xs-2 control-label" style="text-align:center">Jenis</label>
+                      <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
+
+                      <div class="col-md-9">
+                        <select class="form-control" id="jenis_article" name="jenis_article">
+                          <option>-- Pilih --</option>
+                          <option>Masjid</option>
+                          <option>Mushola</option>
+                          <option>Yayasan</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="alamat_article" class="col-xs-2 control-label" style="text-align:center">Alamat</label>
+                      <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
+
+                      <div class="col-md-9">
+                          <textarea class="form-control" name="alamat_article" rows="4" cols="50" required></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="provinsi_article" class="col-xs-2 control-label" style="text-align:center">Provinsi</label>
+                      <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
+
+                      <div class="col-md-9">
+                        <select class="form-control" id="provinsi_article" name="provinsi_article">
+                          <option>-- Pilih --</option>
+                          <option>Banten</option>
+                          <option>DKI Jakarta</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="kelurahan_article" class="col-xs-2 control-label" style="text-align:center">Kelurahan</label>
+                      <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
+
+                      <div class="col-md-9">
+                        <select class="form-control" id="kelurahan_article" name="kelurahan_article">
+                          <option>-- Pilih --</option>
+                          <option>Banten</option>
+                          <option>DKI Jakarta</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="kecamatan_article" class="col-xs-2 control-label" style="text-align:center">Kecamatan</label>
+                      <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
+
+                      <div class="col-md-9">
+                        <select class="form-control" id="kecamatan_article" name="kecamatan_article">
+                          <option>-- Pilih --</option>
+                          <option>Banten</option>
+                          <option>DKI Jakarta</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="isi_article" class="col-xs-2 control-label" style="text-align:center">Keterangan</label>
+                      <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
+
+                      <div class="col-md-9">
+                        <textarea class="ckeditor" name="isi_article" rows="4" cols="50"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="rekening_article" class="col-xs-2 control-label" style="text-align:center">No. Rekening</label>
+                      <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
+
+                      <div class="col-xs-9">
+                        <select class="form-control" id="rekening_article" name="rekening_article">
+                          <option>-- Pilih --</option>
+                          <option>BCA a/n Juri Susanto</option>
+                          <option>BNI a/n Mamod Pebrianto</option>
+                          <option>BJB a/n Riki Pahlevi</option>
+                        </select>
+                      </div>
+                      <!-- <div class="col-xs-2">
+                        <label class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox1" value="option1"> Gunakan Rekening yang sama
+                        </label>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="image_article" class="col-xs-2 control-label" style="text-align:center">Foto</label>
+                      <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
+
+                      <div class="col-xs-8">
+                        <!-- <img src="http://placehold.it/300x300" id="showimages" style="margin-bottom:5px; max-height:100px;" />
+
+                        <input id="image_change" type="file" class="" name="image_article"> -->
+
+                        <label for="FileInput">
+                          <img src="images/add-product.png" style="cursor:pointer;float:right;border:1px dashed #9c9c9c; padding:5px;" />
+                        </label>
+
+                        <input type="file" id="FileInput" style="cursor: pointer; display: none"/>
+                        <input type="submit" id="Up" style="display: none;" />
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-8 col-md-offset-5">
+                  <button type="submit" class="btn btn-primary">
+                      Save
+                  </button>
+                  <button type="reset" class="btn btn-primary">
+                      Reset
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- akhir tambah artikel -->
+
+        <!-- awal data artikel -->
+        <div role="tabpanel" class="tab-pane active" id="dataArticle">
+          <div class="panel panel-default" style="padding:30px 20px 20px 20px;border-top:0;">
+            <div class="panel-body">
+              <h2>Data Artikel</h2> <hr>
+              <form class="form-horizontal" role="form" method="POST" action="" enctype="multipart/form-data">
+                  <table class="table">
+                    <thead>
+                      <th style="text-align:center;">No.</th>
+                      <th style="text-align:center;">Judul</th>
+                      <th style="text-align:center;">Jenis</th>
+                      <th style="text-align:center;">Status</th>
+                      <th style="text-align:center;">Aksi</th>
+                    </thead>
+
+                    <tbody>
+                      <td style="text-align:center;">1</td>
+                      <td style="text-align:center;">masjid itu</td>
+                      <td style="text-align:center;">Masjid</td>
+                      <td style="text-align:center;">ditampilkan</td>
+                      <td style="text-align:center;">
+                        <a href="#">Ubah</a>
+                        |
+                        <a href="#">Hapus</a>
+                      </td>
+                    </tbody>
+                  </table>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- akhir data artikel -->
+
+      </div>
+      <!-- akhir div tab content -->
+
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+    $( "#FileInput" ).change(function() {
+      $( "#Up" ).click();
+    });
+</script>
+
+<script type="text/javascript">
+  $('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+  })
+</script>

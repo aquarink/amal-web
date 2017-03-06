@@ -60,9 +60,9 @@ amal.config(['$routeProvider','$locationProvider',
             title: 'User'
         }).
 
-        when('/admin-tambahArtikel', {
-            templateUrl: 'pages-admin/addArticle.html',
-            title: 'Tambah Artikel'
+        when('/admin-artikel', {
+            templateUrl: 'pages-admin/article.html',
+            title: 'Artikel'
         }).
 
         when('/admin-pengaturan', {
