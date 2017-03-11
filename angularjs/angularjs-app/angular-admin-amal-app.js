@@ -70,6 +70,21 @@ amal.config(['$routeProvider','$locationProvider',
             title: 'Pengaturan'
         }).
 
+        when('/admin-dataArtikel', {
+            templateUrl: 'pages-admin/dataArticle.html',
+            title: 'Data Artikel'
+        }).
+
+        when('/admin-dataTempat', {
+            templateUrl: 'pages-admin/dataBuilding.html',
+            title: 'Data Artikel'
+        }).
+
+        when('/admin-detailArtikel', {
+            templateUrl: 'pages-admin/detailArticle.html',
+            title: 'Data Artikel'
+        }).
+
         when('/verify', {
             templateUrl: 'pages-admin/verify.html',
             title: 'Verifikasi Akun | #BeramalMembersihkanRezeki'
