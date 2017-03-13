@@ -61,6 +61,20 @@ amal.config(['$routeProvider','$locationProvider',
             title: 'User'
         }).
 
+<<<<<<< HEAD
+=======
+        when('/admin-artikel', {
+            templateUrl: 'pages-admin/article.html',
+            controller: 'adminController',
+            title: 'Artikel'
+        }).
+
+        when('/admin-pengaturan', {
+            templateUrl: 'pages-admin/setting.html',
+            title: 'Pengaturan'
+        }).
+
+>>>>>>> efa44f0546e8758f49b3dacd28550e698c91698e
         when('/admin-dataArtikel', {
             templateUrl: 'pages-admin/dataArticle.html',
             title: 'Data Artikel'
