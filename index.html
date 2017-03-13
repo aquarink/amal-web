@@ -16,7 +16,7 @@
     <script src="angularjs/angularjs-core/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="angularjs/angularjs-core/angular-sanitize.min.js"></script>
 
-    <script>var itv = 'http://localhost/amal-api/api/';</script>
+    <script>var itv = 'http://localhost/api-amal-share/api/';</script>
 
     <!-- Angularjs App-->
     <script src="angularjs/angularjs-app/angular-amal-app.js"></script>
@@ -26,8 +26,24 @@
     <script src="angularjs/angularjs-controller/admin-controller.js"></script>
 
     <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link ng-if="currentPath === '/'
+                || currentPath === '/masjid'
+                || currentPath === '/mushola'
+                || currentPath === '/yayasan'
+                || currentPath === '/tentang'
+                || currentPath === '/kontak'
+                || currentPath === '/admin-pengaturan'
+                || currentPath === '/admin-artikel'"
+                href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link ng-if="currentPath === '/'
+                || currentPath === '/masjid'
+                || currentPath === '/mushola'
+                || currentPath === '/yayasan'
+                || currentPath === '/tentang'
+                || currentPath === '/kontak'"
+                href="bootstrap/css/bootstrap-costumize.css" rel="stylesheet">
+
     <!-- Bootstrap Admin-->
     <link ng-if="currentPath === '/admin-artikel'
                 || currentPath === '/admin-pengaturan'"
@@ -38,13 +54,7 @@
                 href="bootstrap/css/bootstrap-costumize-admin.css" rel="stylesheet">
 
     <!-- Bootstrap Guest-->
-    <link ng-if="currentPath === '/'
-                || currentPath === '/masjid'
-                || currentPath === '/mushola'
-                || currentPath === '/yayasan'
-                || currentPath === '/tentang'
-                || currentPath === '/kontak'"
-                href="bootstrap/css/bootstrap-costumize.css" rel="stylesheet">
+
 
 </head>
 
@@ -100,8 +110,7 @@
 <!-- nav untuk page Admin -->
 <nav ng-if="currentPath === '/admin-artikel'
             || currentPath === '/admin-pengaturan'"
-
-     class="navbar navbar-default navbar-fixed-top" style="font-weight: bold;">
+     class="navbar navbar-default navbar-fixed-top" style="font-weight: bold;background:#2ABB9B;border-bottom-color:#2ABB9B;">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -117,30 +126,13 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li ng-class="{active:isActive('/')}"><a href="#"><i class="glyphicon glyphicon-home"></i> Beranda</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artikel <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li g-class="{active:isActive('/admin-tambahArtikel')}"><a href="#/admin-tambahArtikel">Tambah Artikel</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Yayasan <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li g-class="{active:isActive('/register')}"><a href="#">Tambah Yayasan</a></li>
-                        <li><a href="#">Data Yayasan</a></li>
-                    </ul>
-                </li>
-                <!-- <li ng-class="{active:isActive('/masjid')}"><a href="#"><i class="glyphicon glyphicon-th-list"></i> Masjid</a></li>
-                <li ng-class="{active:isActive('/musholah')}"><a href="#"><i class="glyphicon glyphicon-th-list"></i> Mushola</a></li>
-                <li ng-class="{active:isActive('/yayasan')}"><a href="#"><i class="glyphicon glyphicon-th-list"></i> Yayasan</a></li> -->
+                <li ng-class="{active:isActive('admin-artikel')}"><a href="admin-artikel"><i class="glyphicon glyphicon-home"></i> Artikel</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li ng-class="{active:isActive('/tentang')}"><a href="#"><i class="glyphicon glyphicon-bullhorn"></i> Tentang Kami</a></li>
-                <li ng-class="{active:isActive('/tentang')}"><a href="#"><i class="glyphicon glyphicon-map-marker"></i> Kontak</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li g-class="{active:isActive('#/admin-pengaturan')}"><a href="#/admin-pengaturan">Pengaturan</a></li>
+                        <li g-class="{active:isActive('admin-pengaturan')}"><a href="admin-pengaturan">Pengaturan</a></li>
                         <!-- <li><a href="#">Data User</a></li>
                         <li><a href="#">Something else here</a></li> -->
                         <li role="separator" class="divider"></li>
