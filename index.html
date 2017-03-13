@@ -26,15 +26,7 @@
     <script src="angularjs/angularjs-controller/admin-controller.js"></script>
 
     <!-- Bootstrap -->
-    <link ng-if="currentPath === '/'
-                || currentPath === '/masjid'
-                || currentPath === '/mushola'
-                || currentPath === '/yayasan'
-                || currentPath === '/tentang'
-                || currentPath === '/kontak'
-                || currentPath === '/admin-pengaturan'
-                || currentPath === '/admin-artikel'"
-                href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link ng-if="currentPath === '/'
                 || currentPath === '/masjid'
@@ -46,11 +38,21 @@
 
     <!-- Bootstrap Admin-->
     <link ng-if="currentPath === '/admin-artikel'
-                || currentPath === '/admin-pengaturan'"
+                || currentPath === '/admin-pengaturan'
+                || currentPath === '/admin-admin1'
+                || currentPath === '/admin-admin2'
+                || currentPath === '/admin-user'
+                || currentPath === '/admin-dataTempat'
+                || currentPath === '/admin-dataArtikel'"
                 href="bootstrap/css/admin.css" rel="stylesheet">
 
     <link ng-if="currentPath === '/admin-artikel'
-                || currentPath === '/admin-pengaturan'"
+                || currentPath === '/admin-pengaturan'
+                || currentPath === '/admin-admin1'
+                || currentPath === '/admin-admin2'
+                || currentPath === '/admin-user'
+                || currentPath === '/admin-dataTempat'
+                || currentPath === '/admin-dataArtikel'"
                 href="bootstrap/css/bootstrap-costumize-admin.css" rel="stylesheet">
 
     <!-- Bootstrap Guest-->
@@ -107,10 +109,14 @@
     </div>
 </nav>
 
-<!-- nav untuk page Admin -->
+<!-- nav untuk page Admin user -->
 <nav ng-if="currentPath === '/admin-artikel'
-            || currentPath === '/admin-pengaturan'"
+            || currentPath === '/admin-pengaturan'
+            || currentPath === '/admin-admin1'
+            || currentPath === '/detailArtikel1'"
+
      class="navbar navbar-default navbar-fixed-top" style="font-weight: bold;background:#2ABB9B;border-bottom-color:#2ABB9B;">
+
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -126,19 +132,64 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li ng-class="{active:isActive('/')}"><a href="#"><i class="glyphicon glyphicon-home"></i> Beranda</a></li>
-                <li ng-class="{active:isActive('admin-artikel')}"><a href="admin-artikel"><i class="glyphicon glyphicon-home"></i> Artikel</a></li>
+                <li ng-class="{active:isActive('admin-artikel')}"><a href="admin-artikel"><i class="glyphicon glyphicon-duplicate"></i> Artikel</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user" style="margin-right:5px;"></i>User <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li g-class="{active:isActive('admin-pengaturan')}"><a href="admin-pengaturan">Pengaturan</a></li>
+                        <li g-class="{active:isActive('admin-pengaturan')}"><a href="admin-pengaturan"><i class="glyphicon glyphicon-cog" style="margin-right:5px;"></i>Pengaturan</a></li>
                         <!-- <li><a href="#">Data User</a></li>
                         <li><a href="#">Something else here</a></li> -->
                         <li role="separator" class="divider"></li>
                         <!-- <li class="dropdown-header">Nav header</li>
                         <li><a href="#">Separated link</a></li> -->
-                        <li><a href="#">Keluar</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-log-out" style="margin-right:5px;"></i>Keluar</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- nav untuk page Admin Super -->
+<nav ng-if="currentPath === '/admin-admin2'
+            || currentPath === '/admin-user'
+            || currentPath === '/admin-dataTempat'
+            || currentPath === '/admin-dataArtikel'"
+
+     class="navbar navbar-default navbar-fixed-top" style="font-weight: bold;background:#4183D7;border-bottom-color:#4183D7;">
+
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="padding-top: 0px">
+                <img src="images/logo.png" style="width: 140px;">
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active:isActive('/admin-admin2')}"><a href="admin-admin2"><i class="glyphicon glyphicon-home"></i> Beranda</a></li>
+                <li ng-class="{active:isActive('/admin-user')}"><a href="admin-user"><i class="glyphicon glyphicon-duplicate"></i> User</a></li>
+                <li ng-class="{active:isActive('/admin-dataArtikel')}"><a href="admin-dataArtikel"><i class="glyphicon glyphicon-duplicate"></i> Artikel</a></li>
+                <li ng-class="{active:isActive('/admin-dataTempat')}"><a href="admin-dataTempat"><i class="glyphicon glyphicon-duplicate"></i> Artikel</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user" style="margin-right:5px;"></i>User <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li g-class="{active:isActive('admin-pengaturan')}"><a href="admin-pengaturan"><i class="glyphicon glyphicon-cog" style="margin-right:5px;"></i>Pengaturan</a></li>
+                        <!-- <li><a href="#">Data User</a></li>
+                        <li><a href="#">Something else here</a></li> -->
+                        <li role="separator" class="divider"></li>
+                        <!-- <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li> -->
+                        <li><a href="#"><i class="glyphicon glyphicon-log-out" style="margin-right:5px;"></i>Keluar</a></li>
                     </ul>
                 </li>
             </ul>
@@ -147,6 +198,17 @@
 </nav>
 
 <div style="margin-top: 70px" ng-view></div>
+
+<footer ng-if="currentPath === '/admin-artikel'
+            || currentPath === '/admin-pengaturan'
+            || currentPath === '/admin-admin1'"
+
+            class="footer"
+            style="background:#2ABB9B;border-bottom-color:#2ABB9B;padding:25px;margin-top:35px;">
+  <div class="container">
+    <p class="text-muted" style="color:#fff;text-align:center;">&copy; 2017 Indo Amal. All Rights Reserved.</p>
+  </div>
+</footer>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="bootstrap/jquery1.12.4/jquery.min.js"></script>

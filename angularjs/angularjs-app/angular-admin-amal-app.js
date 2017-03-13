@@ -55,19 +55,10 @@ amal.config(['$routeProvider','$locationProvider',
             title: 'Register User'
         }).
 
+        // Route admin super
         when('/admin-user', {
             templateUrl: 'pages-admin/dataUser.html',
             title: 'User'
-        }).
-
-        when('/admin-artikel', {
-            templateUrl: 'pages-admin/article.html',
-            title: 'Artikel'
-        }).
-
-        when('/admin-pengaturan', {
-            templateUrl: 'pages-admin/setting.html',
-            title: 'Pengaturan'
         }).
 
         when('/admin-dataArtikel', {
@@ -80,10 +71,31 @@ amal.config(['$routeProvider','$locationProvider',
             title: 'Data Artikel'
         }).
 
-        when('/admin-detailArtikel', {
-            templateUrl: 'pages-admin/detailArticle.html',
+        when('/admin-admin2', {
+            templateUrl: 'pages-admin/adminSuper.html',
             title: 'Data Artikel'
         }).
+
+                  // Route Admin User
+                  when('/admin-artikel', {
+                      templateUrl: 'pages-admin/article.html',
+                      title: 'Artikel'
+                  }).
+
+                  when('/admin-pengaturan', {
+                      templateUrl: 'pages-admin/setting.html',
+                      title: 'Pengaturan'
+                  }).
+
+                  when('/admin-detailArtikel1', {
+                      templateUrl: 'pages-admin/detailArticle.html',
+                      title: 'Data Artikel'
+                  }).
+
+                  when('/admin-admin1', {
+                      templateUrl: 'pages-admin/adminUser.html',
+                      title: 'Beranda'
+                  }).
 
         when('/verify', {
             templateUrl: 'pages-admin/verify.html',
