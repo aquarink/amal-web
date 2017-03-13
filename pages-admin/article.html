@@ -1,65 +1,264 @@
-<!-- halaman ini untuk admin biasa -->
-
-<style rel="stylesheet" type="text/css">
-  h2{
-    text-align: center;
-    font-family: 'Timeless';
-    color: #000;
-    text-transform: uppercase;
-    padding: 20px;
-  }
-  label{
-    font-family: 'Timeless';
-    font-size: 16px;
-  }
-  td{
-    font-family: 'Timeless';
-    font-size: 15px;
-    font-weight: bold;
-  }
-  th{
-    font-family: 'Timeless';
-    font-size: 16px;
-    font-weight: bold;
-  }
-  hr {
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 2em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
+<style media="screen">
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+/* written by riliwan balogun http://www.facebook.com/riliwan.rabo*/
+.board{
+  width: 75%;
+  margin: auto;
+  background: #fff;
+  /*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
 }
+.board .nav-tabs {
+  position: relative;
+  /* border-bottom: 0; */
+  /* width: 80%; */
+  margin: 40px auto;
+  margin-bottom: 0;
+  box-sizing: border-box;
+
+}
+
+.board > div.board-inner{
+  background: #fafafa url(http://subtlepatterns.com/patterns/geometry2.png);
+  background-size: 30%;
+}
+
+p.narrow{
+  width: 60%;
+  margin: 10px auto;
+}
+
+.liner{
+  height: 2px;
+  background: #ddd;
+  position: absolute;
+  width: 80%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #555555;
+  cursor: default;
+  /* background-color: #ffffff; */
+  border: 0;
+  border-bottom-color: transparent;
+}
+
+span.round-tabs{
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  display: inline-block;
+  border-radius: 100px;
+  background: white;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  font-size: 25px;
+}
+
+span.round-tabs.one{
+  color: rgb(34, 194, 34);border: 2px solid rgb(34, 194, 34);
+}
+
+li.active span.round-tabs.one{
+  background: #fff !important;
+  border: 2px solid #ddd;
+  color: rgb(34, 194, 34);
+}
+
+span.round-tabs.two{
+  color: #febe29;border: 2px solid #febe29;
+}
+
+li.active span.round-tabs.two{
+  background: #fff !important;
+  border: 2px solid #ddd;
+  color: #febe29;
+}
+
+span.round-tabs.three{
+  color: #3e5e9a;border: 2px solid #3e5e9a;
+}
+
+li.active span.round-tabs.three{
+  background: #fff !important;
+  border: 2px solid #ddd;
+  color: #3e5e9a;
+}
+
+span.round-tabs.four{
+  color: #f1685e;border: 2px solid #f1685e;
+}
+
+li.active span.round-tabs.four{
+  background: #fff !important;
+  border: 2px solid #ddd;
+  color: #f1685e;
+}
+
+span.round-tabs.five{
+  color: #999;border: 2px solid #999;
+}
+
+li.active span.round-tabs.five{
+  background: #fff !important;
+  border: 2px solid #ddd;
+  color: #999;
+}
+
+.nav-tabs > li.active > a span.round-tabs{
+  background: #fafafa;
+}
+.nav-tabs > li {
+  width: 20%;
+}
+/*li.active:before {
+content: " ";
+position: absolute;
+left: 45%;
+opacity:0;
+margin: 0 auto;
+bottom: -2px;
+border: 10px solid transparent;
+border-bottom-color: #fff;
+z-index: 1;
+transition:0.2s ease-in-out;
+}*/
+.nav-tabs > li:after {
+  content: " ";
+  position: absolute;
+  left: 45%;
+  opacity:0;
+  margin: 0 auto;
+  bottom: 0px;
+  border: 5px solid transparent;
+  border-bottom-color: #ddd;
+  transition:0.1s ease-in-out;
+
+}
+.nav-tabs > li.active:after {
+  content: " ";
+  position: absolute;
+  left: 45%;
+  opacity:1;
+  margin: 0 auto;
+  bottom: 0px;
+  border: 10px solid transparent;
+  border-bottom-color: #ddd;
+
+}
+.nav-tabs > li a{
+  width: 70px;
+  height: 70px;
+  margin: 20px auto;
+  border-radius: 100%;
+  padding: 0;
+}
+
+.nav-tabs > li a:hover{
+  background: transparent;
+}
+
+.tab-content{
+}
+.tab-pane{
+  position: relative;
+}
+.tab-content .head{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+.btn-outline-rounded{
+  padding: 10px 40px;
+  margin: 20px 0;
+  border: 2px solid transparent;
+  border-radius: 25px;
+}
+
+.btn.green{
+  background-color:#5cb85c;
+  /*border: 2px solid #5cb85c;*/
+  color: #ffffff;
+}
+
+
+
+@media( max-width : 585px ){
+
+  .board {
+    width: 90%;
+    height:auto !important;
+  }
+  span.round-tabs {
+    font-size:16px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  .tab-content .head{
+    font-size:20px;
+  }
+  .nav-tabs > li a {
+    width: 50px;
+    height: 50px;
+    line-height:50px;
+  }
+
+  .nav-tabs > li.active:after {
+    content: " ";
+    position: absolute;
+    left: 35%;
+  }
+
+  .btn-outline-rounded {
+    padding:12px 20px;
+  }
+}
+
 </style>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a data-target="#newArticle" aria-controls="newArticle" role="tab" data-toggle="tab">Tambah Artikel</a></li>
-        <li role="presentation"><a data-target="#dataArticle" aria-controls="dataArticle" role="tab" data-toggle="tab">Data Artikel</a></li>
-        <!-- <li role="presentation"><a data-target="#security" aria-controls="security" role="tab" data-toggle="tab">Security</a></li> -->
-        <!-- <li role="presentation"><a data-target="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li> -->
-      </ul>
+<script type="text/javascript">
+$(function(){
+  $('a[title]').tooltip();
+});
+</script>
 
-      <!-- awal div tab content -->
-      <div class="tab-content">
+<section style="background:#efefe9;">
+  <div class="container">
+    <div class="row">
+      <div class="board">
+        <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
+        <div class="board-inner">
+          <ul class="nav nav-tabs" id="myTab">
+            <li class="active">
+              <a data-target="#formArtile" data-toggle="tab" title="welcome"><span class="round-tabs one"><i class="glyphicon glyphicon-plus"></i></span></a>
+            </li>
+            <li>
+              <a data-target="#dataArticle" data-toggle="tab" title="profile"><span class="round-tabs two"><i class="glyphicon glyphicon-th-list"></i></span></a>
+            </li>
+          </ul>
+        </div>
 
-        <!-- awal tambah artikel -->
-        <div role="tabpanel" class="tab-pane active" id="newArticle">
-          <div class="panel panel-default" style="padding:30px 20px 20px 20px;border-top:0;">
-            <div class="panel-body">
-              <h2>Tambah Artikel</h2> <hr>
-              <form class="form-horizontal" role="form" method="POST" action="" enctype="multipart/form-data">
+        <div class="tab-content" style="padding-bottom: 40px">
+          <div class="tab-pane fade in active" id="formArtile">
+
+            <h3 class="head text-center">Formulir Registrasi Masjid | Musolah | Yayasan</h3>
+            <!-- <h3 class="head text-center">Formulir Registrasi Masjid | Musolah | Yayasan<sup>™</sup> <span style="color:#f48260;">♥</span></h3> -->
+            <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" name="articleForm">
                 <div class="col-md-7">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="title_article" class="col-xs-2 control-label" style="text-align:left">Judul</label>
+                      <label for="title_article" class="col-xs-2 control-label" style="text-align:left">Nama</label>
                       <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
-
                       <div class="col-md-9">
-                        <input id="title_article" type="text" class="form-control" name="title_article" value="" required>
+                        <input id="title_article" type="text" class="form-control" name="title_article" required="required" placeholder="Nama Masjid / Musolah / Yayasan">
                       </div>
                     </div>
                     <div class="form-group">
@@ -67,7 +266,7 @@
                       <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
 
                       <div class="col-md-9">
-                        <select class="form-control" id="jenis_article" name="jenis_article">
+                        <select class="form-control" id="jenis_article" name="jenis_article" required="required">
                           <option>-- Pilih --</option>
                           <option>Masjid</option>
                           <option>Mushola</option>
@@ -78,44 +277,47 @@
                     <div class="form-group">
                       <label for="alamat_article" class="col-xs-2 control-label" style="text-align:left">Alamat</label>
                       <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
-
                       <div class="col-md-9">
-                          <textarea class="form-control" name="alamat_article" rows="4" cols="50" required></textarea>
+                          <input class="form-control" name="alamat_article" required placeholder="Nama jalan dan alamat lengkap" required="required">
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="provinsi_article" class="col-xs-2 control-label" style="text-align:left">Provinsi</label>
                       <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
-
                       <div class="col-md-9">
-                        <select class="form-control" id="provinsi_article" name="provinsi_article">
-                          <option>-- Pilih --</option>
-                          <option>Banten</option>
-                          <option>DKI Jakarta</option>
+                        <select class="form-control" id="provinsi_article" name="provinsi_article" ng-change="getKota()" ng-model="provinsi_article" required="required">
+                          <option value="0" ng-selected="true">-- Pilih Provinsi --</option>
+                          <option ng:repeat="pro in provinsi" value="{{pro.id}}">{{pro.name}}</option>
                         </select>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="kelurahan_article" class="col-xs-2 control-label" style="text-align:left">Kelurahan</label>
+                      <label for="kota_article" class="col-xs-2 control-label" style="text-align:left">Kota</label>
                       <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
-
                       <div class="col-md-9">
-                        <select class="form-control" id="kelurahan_article" name="kelurahan_article">
-                          <option>-- Pilih --</option>
-                          <option>Banten</option>
-                          <option>DKI Jakarta</option>
+                        <select ng-disabled="prv == false" class="form-control" id="kota_article" name="kota_article" ng-change="getKecamatan()" ng-model="kota_article" required="required">
+                          <option value="0" ng-selected="true">-- Pilih Kota --</option>
+                          <option ng:repeat="kot in kota" value="{{kot.id}}">{{kot.name}}</option>
                         </select>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="kecamatan_article" class="col-xs-2 control-label" style="text-align:left">Kecamatan</label>
                       <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
-
                       <div class="col-md-9">
-                        <select class="form-control" id="kecamatan_article" name="kecamatan_article">
-                          <option>-- Pilih --</option>
-                          <option>Banten</option>
-                          <option>DKI Jakarta</option>
+                        <select ng-disabled="prv == false || kta == false" class="form-control" id="kecamatan_article" name="kecamatan_article" ng-change="getKelurahan()" ng-model="kecamatan_article" required="required">
+                          <option value="0" ng-selected="true">-- Pilih Kecamatan --</option>
+                          <option ng:repeat="kec in kecamatan" value="{{kec.id}}">{{kec.name}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="kelurahan_article" class="col-xs-2 control-label" style="text-align:left">Kelurahan</label>
+                      <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
+                      <div class="col-md-9">
+                        <select ng-disabled="prv == false || kta == false || kca == false" class="form-control" id="kelurahan_article" name="kelurahan_article" ng-model="kelurahan_article" required="required">
+                          <option value="0" ng-selected="true">-- Pilih Kelurahan --</option>
+                          <option ng:repeat="kel in kelurahan" value="{{kel.id}}">{{kel.name}}</option>
                         </select>
                       </div>
                     </div>
@@ -124,7 +326,7 @@
                       <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
 
                       <div class="col-md-9">
-                        <textarea class="ckeditor" name="isi_article" rows="4" cols="50"></textarea>
+                        <textarea class="form-control" name="isi_article" ng-model="isi_article" rows="4" cols="50" placeholder="Keterangan tambahan"></textarea>
                       </div>
                     </div>
                     <div class="form-group">
@@ -132,7 +334,7 @@
                       <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
 
                       <div class="col-xs-9">
-                        <select class="form-control" id="rekening_article" name="rekening_article">
+                        <select class="form-control" id="rekening_article" name="rekening_article" ng-model="rekening_article" required="required">
                           <option>-- Pilih --</option>
                           <option>BCA a/n Juri Susanto</option>
                           <option>BNI a/n Mamod Pebrianto</option>
@@ -172,26 +374,20 @@
                 </div>
 
                 <div class="col-md-8 col-md-offset-5">
-                  <button type="submit" id="myButton" data-loading-text="Proses..." class="btn btn-primary" autocomplete="off">
-                    Simpan
+                  <button ng-disabled="articleForm.$invalid" ng-click="articleSubmit()" class="btn btn-success btn-outline-rounded green"> Simpan
+                    <span style="margin-left:10px;" class="glyphicon glyphicon-plus"></span>
                   </button>
-                  <button type="reset" class="btn btn-primary">
-                      Reset
+
+                  <button type="reset" href="" class="btn btn-warning btn-outline-rounded orange"> Reset
+                    <span style="margin-left:10px;" class="glyphicon glyphicon-trash"></span>
                   </button>
                 </div>
               </form>
-            </div>
           </div>
-        </div>
-        <!-- akhir tambah artikel -->
 
-        <!-- awal data artikel -->
-        <div role="tabpanel" class="tab-pane active" id="dataArticle">
-          <div class="panel panel-default" style="padding:30px 20px 20px 20px;border-top:0;">
-            <div class="panel-body">
-              <h2>Data Artikel</h2> <hr>
-              <form class="form-horizontal" role="form" method="POST" action="" enctype="multipart/form-data">
-                  <table class="table table-striped">
+          <div class="tab-pane fade" id="dataArticle">
+            <h3 class="head text-center">Data Terdaftar</h3>
+            <table class="table table-striped" style="height: 500px">
                     <thead>
                       <th style="text-align:left;">No.</th>
                       <th style="text-align:left;">Judul</th>
@@ -214,36 +410,12 @@
                       </td>
                     </tbody>
                   </table>
-              </form>
-            </div>
           </div>
+
+          <div class="clearfix"></div>
         </div>
-        <!-- akhir data artikel -->
 
       </div>
-      <!-- akhir div tab content -->
-
     </div>
   </div>
-</div>
-
-<script type="text/javascript">
-  $('#myButton').on('click', function () {
-    var $btn = $(this).button('loading')
-    // business logic...
-    $btn.button('submit')
-  })
-</script>
-
-<script type="text/javascript">
-    $( "#FileInput" ).change(function() {
-      $( "#Up" ).click();
-    });
-</script>
-
-<script type="text/javascript">
-  $('#myTabs a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-  })
-</script>
+</section>

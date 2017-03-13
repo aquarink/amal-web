@@ -62,6 +62,7 @@ amal.config(['$routeProvider','$locationProvider',
 
         when('/admin-artikel', {
             templateUrl: 'pages-admin/article.html',
+            controller: 'adminController',
             title: 'Artikel'
         }).
 

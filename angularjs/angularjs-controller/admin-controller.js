@@ -128,4 +128,88 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
                 console.log(level);
             })
     }
+
+    $scope.getProvinsi = function () {
+        $http({
+            method  : "GET",
+            url     : itv +'wilayah/provinsi'
+        }).
+            success(function (response) {
+                $scope.provinsi = response.data;
+
+                $scope.prv = false;
+                $scope.kta = false;
+                $scope.kca = false;
+                $scope.klu = false;
+                // console.log(response);
+            }).
+            error(function (data, status, header, config) {
+                console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);
+                //$location.path('/admin');
+                $scope.apply();
+            })
+    }
+
+    $scope.getKota = function () {
+        $http({
+            method  : "GET",
+            url     : itv +'wilayah/kota/'+$scope.provinsi_article,
+        }).
+            success(function (response) {
+                $scope.kota = response.data;
+
+                $scope.prv = true;
+                $scope.kta = false;
+                $scope.kca = false;
+                $scope.klu = false;
+                console.log(response);
+            }).
+            error(function (data, status, header, config) {
+                console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);
+                //$location.path('/admin');
+                $scope.apply();
+            })
+    }
+
+    $scope.getKecamatan = function () {
+        $http({
+            method  : "GET",
+            url     : itv +'wilayah/kecamatan/'+$scope.kota_article,
+        }).
+            success(function (response) {
+                $scope.kecamatan = response.data;
+
+                $scope.prv = true;
+                $scope.kta = true;
+                $scope.kca = false;
+                $scope.klu = false;
+                console.log(response);
+            }).
+            error(function (data, status, header, config) {
+                console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);
+                //$location.path('/admin');
+                $scope.apply();
+            })
+    }
+
+    $scope.getKelurahan = function () {
+        $http({
+            method  : "GET",
+            url     : itv +'wilayah/kelurahan/'+$scope.kecamatan_article,
+        }).
+            success(function (response) {
+                $scope.kelurahan = response.data;
+
+                $scope.prv = true;
+                $scope.kta = true;
+                $scope.kca = true;
+                $scope.klu = false;
+                console.log(response);
+            }).
+            error(function (data, status, header, config) {
+                console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);
+                //$location.path('/admin');
+                $scope.apply();
+            })
+    }
 });
