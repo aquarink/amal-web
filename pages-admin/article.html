@@ -230,7 +230,7 @@ $(function(){
 });
 </script>
 
-<section style="background:#efefe9;">
+<section style="background:#efefe9;" ng-controller="adminController" ng-init="getProvinsi()">
   <div class="container">
     <div class="row">
       <div class="board">
@@ -295,7 +295,7 @@ $(function(){
                       <label for="kota_article" class="col-xs-2 control-label" style="text-align:left">Kota</label>
                       <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
                       <div class="col-md-9">
-                        <select ng-disabled="prv == false" class="form-control" id="kota_article" name="kota_article" ng-change="getKecamatan()" ng-model="kota_article" required="required">
+                        <select ng-disabled="provinsi_article == '0' || prv == false" class="form-control" id="kota_article" name="kota_article" ng-change="getKecamatan()" ng-model="kota_article" required="required">
                           <option value="0" ng-selected="true">-- Pilih Kota --</option>
                           <option ng:repeat="kot in kota" value="{{kot.id}}">{{kot.name}}</option>
                         </select>
@@ -305,7 +305,7 @@ $(function(){
                       <label for="kecamatan_article" class="col-xs-2 control-label" style="text-align:left">Kecamatan</label>
                       <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
                       <div class="col-md-9">
-                        <select ng-disabled="prv == false || kta == false" class="form-control" id="kecamatan_article" name="kecamatan_article" ng-change="getKelurahan()" ng-model="kecamatan_article" required="required">
+                        <select ng-disabled="provinsi_article == '0' || prv == false || kta == false" class="form-control" id="kecamatan_article" name="kecamatan_article" ng-change="getKelurahan()" ng-model="kecamatan_article" required="required">
                           <option value="0" ng-selected="true">-- Pilih Kecamatan --</option>
                           <option ng:repeat="kec in kecamatan" value="{{kec.id}}">{{kec.name}}</option>
                         </select>
@@ -315,7 +315,7 @@ $(function(){
                       <label for="kelurahan_article" class="col-xs-2 control-label" style="text-align:left">Kelurahan</label>
                       <label for="image_article" class="col-xs-1 control-label" style="text-align:center">:</label>
                       <div class="col-md-9">
-                        <select ng-disabled="prv == false || kta == false || kca == false" class="form-control" id="kelurahan_article" name="kelurahan_article" ng-model="kelurahan_article" required="required">
+                        <select ng-disabled="provinsi_article == '0' || prv == false || kta == false || kca == false" class="form-control" id="kelurahan_article" name="kelurahan_article" ng-model="kelurahan_article" required="required">
                           <option value="0" ng-selected="true">-- Pilih Kelurahan --</option>
                           <option ng:repeat="kel in kelurahan" value="{{kel.id}}">{{kel.name}}</option>
                         </select>
