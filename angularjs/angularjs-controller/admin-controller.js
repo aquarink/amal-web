@@ -141,7 +141,6 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
                 $scope.kta = false;
                 $scope.kca = false;
                 $scope.klu = false;
-                // console.log(response);
             }).
             error(function (data, status, header, config) {
                 console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);
@@ -162,7 +161,6 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
                 $scope.kta = false;
                 $scope.kca = false;
                 $scope.klu = false;
-                console.log(response);
             }).
             error(function (data, status, header, config) {
                 console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);
@@ -183,7 +181,6 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
                 $scope.kta = true;
                 $scope.kca = false;
                 $scope.klu = false;
-                console.log(response);
             }).
             error(function (data, status, header, config) {
                 console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);
@@ -204,7 +201,6 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
                 $scope.kta = true;
                 $scope.kca = true;
                 $scope.klu = false;
-                console.log(response);
             }).
             error(function (data, status, header, config) {
                 console.log('D :' + data, 'S :' + status, 'H :' + header, 'C :' + config);
