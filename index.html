@@ -25,6 +25,11 @@
     <!-- Angularjs Controller-->
     <script src="angularjs/angularjs-controller/admin-controller.js"></script>
 
+    <!-- ng-flow -->
+    <script src="ng-flow/dist/ng-flow-standalone.min.js"></script>
+    <!-- or include the files separately -->
+    <script src="ng-flow/dist/ng-flow.min.js"></script>
+
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -204,7 +209,7 @@
             || currentPath === '/admin-admin1'"
 
             class="footer"
-            style="background:#2ABB9B;border-bottom-color:#2ABB9B;padding:25px;margin-top:35px;">
+            style="background:#2ABB9B;padding:25px;">
   <div class="container">
     <p class="text-muted" style="color:#fff;text-align:center;">&copy; 2017 Indo Amal. All Rights Reserved.</p>
   </div>
@@ -213,5 +218,25 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="bootstrap/jquery1.12.4/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  $('a[title]').tooltip();
+});
+</script>
+
+<script type="text/javascript">
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#showimages').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+$("#image_change").change(function () {
+  readURL(this);
+});
+</script>
 </body>
 </html>

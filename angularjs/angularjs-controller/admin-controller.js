@@ -118,7 +118,7 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
                 if (data.error == '1') {
                     $location.path('/admin-login');
                 } else {
-                    $scope.pesan = '<strong>Verifiasi Gagal!</strong> Harap ulangi langkah yang ada pada email anda.';
+                    $scope.pesan = '<strong>Verifikasi Gagal!</strong> Harap ulangi langkah yang ada pada email anda.';
                 }
             }).
             error(function (data, status, header, config) {
