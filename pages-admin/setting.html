@@ -1,180 +1,180 @@
 <!-- halaman ini untuk admin biasa -->
 
 <style rel="stylesheet" type="text/css">
-  h2{
-    text-align: center;
-    font-family: 'Timeless';
-    color: #000;
-    text-transform: uppercase;
-    padding: 20px;
-  }
-  label{
-    font-family: 'Timeless';
-    font-size: 16px;
-  }
-  hr {
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 2em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
-}
+    h2{
+        text-align: center;
+        font-family: 'Timeless';
+        color: #000;
+        text-transform: uppercase;
+        padding: 20px;
+    }
+    label{
+        font-family: 'Timeless';
+        font-size: 16px;
+    }
+    hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 2em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 1px;
+    }
 </style>
 
 <section style="background:#efefe9; margin-top:-70px; padding-top:50px;padding-bottom:50px;">
-  <div class="container">
-    <div class="row">
-      <div class="board">
-        <div class="board-inner">
-          <ul class="nav nav-tabs" id="myTab">
-            <li class="active">
-              <a data-target="#formUser" data-toggle="tab" title="Data Diri"><span class="round-tabs one"><i class="glyphicon glyphicon-user"></i></span></a>
-            </li>
-            <li>
-              <a data-target="#formRekening" data-toggle="tab" title="Rekening"><span class="round-tabs two"><i class="glyphicon glyphicon-usd"></i></span></a>
-            </li>
-            <li>
-              <a data-target="#formPassword" data-toggle="tab" title="Password"><span class="round-tabs three"><i class="glyphicon glyphicon-lock"></i></span></a>
-            </li>
-          </ul>
+    <div class="container">
+        <div class="row">
+            <div class="board">
+                <div class="board-inner">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active">
+                            <a data-target="#formUser" data-toggle="tab" title="Data Diri"><span class="round-tabs one"><i class="glyphicon glyphicon-user"></i></span></a>
+                        </li>
+                        <li>
+                            <a data-target="#formRekening" data-toggle="tab" title="Rekening"><span class="round-tabs two"><i class="glyphicon glyphicon-usd"></i></span></a>
+                        </li>
+                        <li>
+                            <a data-target="#formPassword" data-toggle="tab" title="Password"><span class="round-tabs three"><i class="glyphicon glyphicon-lock"></i></span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" style="padding-bottom: 40px">
+                    <div class="tab-pane fade in active" id="formUser">
+                        <h3 class="head text-center">Data Diri</h3>
+                        <form class="form-horizontal" action="index.html" method="post">
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <img src="http://placehold.it/300x300" id="showimages" style="margin-bottom:5px; max-height:100px;" />
+
+                                    <input id="image_change" type="file" class="" name="image_setting">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nama_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Nama</label>
+
+                                <div class="col-md-6">
+                                    <input id="nama_setting" type="text" class="form-control" name="nama_setting" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ktp_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">No. KTP</label>
+
+                                <div class="col-md-6">
+                                    <input id="ktp_setting" type="text" class="form-control" name="ktp_setting" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 col-md-offset-4">
+                                <button ng-disabled="articleForm.$invalid" ng-click="articleSubmit()" class="btn btn-success btn-outline-rounded green"> Simpan
+                                    <span style="margin-left:10px;" class="glyphicon glyphicon-plus"></span>
+                                </button>
+
+                                <button type="reset" href="" class="btn btn-warning btn-outline-rounded orange"> Reset
+                                    <span style="margin-left:10px;" class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade in" id="formRekening">
+                        <h3 class="head text-center">Rekening</h3>
+
+                        <form class="form-horizontal" action="index.html" method="post">
+                            <div class="form-group">
+                                <label for="namaBank_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Nama Bank</label>
+
+                                <div class="col-md-6">
+                                    <select class="form-control" id="namaBank_setting" name="namaBank_setting">
+                                        <option>-- Pilih --</option>
+                                        <option>BCA</option>
+                                        <option>BNI</option>
+                                        <option>BJB</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="rekening_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">No. Rekening</label>
+
+                                <div class="col-md-6">
+                                    <input id="rekening_setting" type="text" class="form-control" name="rekening_setting" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="namaRekening_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Atas Nama</label>
+
+                                <div class="col-md-6">
+                                    <input id="namaRekening_setting" type="text" class="form-control" name="namaRekening_setting" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 col-md-offset-4">
+                                <button ng-disabled="articleForm.$invalid" ng-click="articleSubmit()" class="btn btn-success btn-outline-rounded green"> Simpan
+                                    <span style="margin-left:10px;" class="glyphicon glyphicon-plus"></span>
+                                </button>
+
+                                <button type="reset" href="" class="btn btn-warning btn-outline-rounded orange"> Reset
+                                    <span style="margin-left:10px;" class="glyphicon glyphicon-trash"></span>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade in" id="formPassword">
+                        <h3 class="head text-center">Ganti Password</h3>
+
+                        <form class="form-horizontal" action="index.html" method="post">
+                            <div class="form-group">
+                                <label for="passwordLama_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Password Lama</label>
+
+                                <div class="col-md-6">
+                                    <input id="passwordLama_setting" type="password" class="form-control" name="passwordLama_setting" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="passwordBaru_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Password Baru</label>
+
+                                <div class="col-md-6">
+                                    <input id="passwordBaru_setting" type="password" class="form-control" name="passwordBaru_setting" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Re_passwordBaru_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Konfirmasi Password Baru</label>
+
+                                <div class="col-md-6">
+                                    <input id="Re_passwordBaru_setting" type="password" class="form-control" name="Re_passwordBaru_setting" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 col-md-offset-4">
+                                <button ng-disabled="articleForm.$invalid" ng-click="articleSubmit()" class="btn btn-success btn-outline-rounded green"> Simpan
+                                    <span style="margin-left:10px;" class="glyphicon glyphicon-plus"></span>
+                                </button>
+
+                                <button type="reset" href="" class="btn btn-warning btn-outline-rounded orange"> Reset
+                                    <span style="margin-left:10px;" class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
         </div>
-
-        <div class="tab-content" style="padding-bottom: 40px">
-          <div class="tab-pane fade in active" id="formUser">
-            <h3 class="head text-center">Data Diri</h3>
-            <form class="form-horizontal" action="index.html" method="post">
-              <div class="form-group">
-                <div class="col-md-8 col-md-offset-4">
-                  <img src="http://placehold.it/300x300" id="showimages" style="margin-bottom:5px; max-height:100px;" />
-
-                  <input id="image_change" type="file" class="" name="image_setting">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="nama_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Nama</label>
-
-                <div class="col-md-6">
-                  <input id="nama_setting" type="text" class="form-control" name="nama_setting" value="" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="ktp_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">No. KTP</label>
-
-                <div class="col-md-6">
-                  <input id="ktp_setting" type="text" class="form-control" name="ktp_setting" value="" required>
-                </div>
-              </div>
-
-              <div class="col-md-8 col-md-offset-4">
-                <button ng-disabled="articleForm.$invalid" ng-click="articleSubmit()" class="btn btn-success btn-outline-rounded green"> Simpan
-                  <span style="margin-left:10px;" class="glyphicon glyphicon-plus"></span>
-                </button>
-
-                <button type="reset" href="" class="btn btn-warning btn-outline-rounded orange"> Reset
-                  <span style="margin-left:10px;" class="glyphicon glyphicon-trash"></span>
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <div class="tab-pane fade in" id="formRekening">
-            <h3 class="head text-center">Rekening</h3>
-
-            <form class="form-horizontal" action="index.html" method="post">
-              <div class="form-group">
-                <label for="namaBank_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Nama Bank</label>
-
-                <div class="col-md-6">
-                  <select class="form-control" id="namaBank_setting" name="namaBank_setting">
-                    <option>-- Pilih --</option>
-                    <option>BCA</option>
-                    <option>BNI</option>
-                    <option>BJB</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="rekening_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">No. Rekening</label>
-
-                <div class="col-md-6">
-                  <input id="rekening_setting" type="text" class="form-control" name="rekening_setting" value="" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="namaRekening_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Atas Nama</label>
-
-                <div class="col-md-6">
-                  <input id="namaRekening_setting" type="text" class="form-control" name="namaRekening_setting" value="" required>
-                </div>
-              </div>
-
-              <div class="col-md-8 col-md-offset-4">
-                <button ng-disabled="articleForm.$invalid" ng-click="articleSubmit()" class="btn btn-success btn-outline-rounded green"> Simpan
-                  <span style="margin-left:10px;" class="glyphicon glyphicon-plus"></span>
-                </button>
-
-                <button type="reset" href="" class="btn btn-warning btn-outline-rounded orange"> Reset
-                  <span style="margin-left:10px;" class="glyphicon glyphicon-trash"></span>
-              </div>
-            </form>
-          </div>
-
-          <div class="tab-pane fade in" id="formPassword">
-            <h3 class="head text-center">Ganti Password</h3>
-
-            <form class="form-horizontal" action="index.html" method="post">
-              <div class="form-group">
-                <label for="passwordLama_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Password Lama</label>
-
-                <div class="col-md-6">
-                  <input id="passwordLama_setting" type="password" class="form-control" name="passwordLama_setting" value="" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="passwordBaru_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Password Baru</label>
-
-                <div class="col-md-6">
-                  <input id="passwordBaru_setting" type="password" class="form-control" name="passwordBaru_setting" value="" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="Re_passwordBaru_setting" class="col-md-2 col-md-offset-2 control-label" style="text-align:left">Konfirmasi Password Baru</label>
-
-                <div class="col-md-6">
-                  <input id="Re_passwordBaru_setting" type="password" class="form-control" name="Re_passwordBaru_setting" value="" required>
-                </div>
-              </div>
-
-              <div class="col-md-8 col-md-offset-4">
-                <button ng-disabled="articleForm.$invalid" ng-click="articleSubmit()" class="btn btn-success btn-outline-rounded green"> Simpan
-                  <span style="margin-left:10px;" class="glyphicon glyphicon-plus"></span>
-                </button>
-
-                <button type="reset" href="" class="btn btn-warning btn-outline-rounded orange"> Reset
-                  <span style="margin-left:10px;" class="glyphicon glyphicon-trash"></span>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div class="clearfix"></div>
-      </div>
     </div>
-  </div>
 </section>
 
 
 <script type="text/javascript">
-$(function(){
-  $('a[title]').tooltip();
-});
+    $(function () {
+        $('a[title]').tooltip();
+    });
 </script>

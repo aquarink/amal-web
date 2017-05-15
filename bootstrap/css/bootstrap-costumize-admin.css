@@ -8,12 +8,10 @@ Colorize dropdown
 
 Bookmark your permalink
 
-https://work.smarchal.com/twbscolor/css/1b6cee1795d9fdffffffffff0
-Include Bootstrap assets
 
-//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
-//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js
-Copy the generated SCSS/SASS/LESS/CSS
+
+/*netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js*/
 
 SCSS
 SASS
@@ -88,14 +86,3 @@ CSS
     background-color: #1795d9;
   }
 }
-Find TWBSColor useful ? Share it !
-
-A work by Samuel Marchal
-Suggestions, comments, typo ?
-
-Licence MIT
-
-Buy me a coffee ! or  Buy me a tea !
-
-All brand icons are trademarks of their respective owners.
-The use of these trademarks does not indicate endorsement of the trademark holder by TWBSColor, nor vice versa.

@@ -26,7 +26,7 @@ amal.controller('adminController', function ($scope, $http, $routeParams, $locat
     $scope.loginAdmin = function () {
         $http({
             method  : "POST",
-            url     : itv +'login',
+            url     : itv +'admin-login',
             data    : $.param({email: $scope.email, password : $scope.password}),
             headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
         }).
